@@ -1,4 +1,4 @@
-# 🛒 E-Commerce Data Analytics | SQL, Python & Power BI
+# 🛒 E-Commerce & Retail Intelligence | SQL, Python & Power BI
 
 ## 📌 Project Overview
 
@@ -72,7 +72,9 @@ This project uses the Brazilian E-Commerce Public Dataset by Olist.
 
 The dataset contains information about orders, customers, order items, payments, products, sellers, reviews, geolocation, and product category translations.
 
-**Note:** The original CSV files are not included in this repository. Obtain the dataset from its official source and place the files in the `data/raw/` folder before running the analysis.
+**Dataset source:** [Brazilian E-Commerce Public Dataset by Olist — Kaggle](https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce)
+
+**Note:** The original CSV files are not included in this repository. Obtain the dataset from its source and place the files in the `data/raw/` folder before running the analysis.
 
 ## 🔍 Data Quality Checks
 
@@ -172,5 +174,5 @@ It provides a foundation for using e-commerce data to monitor sales performance,
 **KBN Naveen Kumar**
 
 - **GitHub:** [kbn-naveen-kumar](https://github.com/kbn-naveen-kumar)
-- **Project Repository:** [E-Commerce Data Analytics](https://github.com/kbn-naveen-kumar/ecommerce-data-analytics)
+- **Project Repository:** [E-Commerce & Retail Intelligence](https://github.com/kbn-naveen-kumar/ecommerce-retail-intelligence)
 
