@@ -1,0 +1,33 @@
+
+# Python cache and virtual environments
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+
+# Secrets and environment settings
+.env
+.env.*
+!.env.example
+secrets/
+*.pem
+*.key
+
+# Jupyter temporary files
+.ipynb_checkpoints/
+
+# Windows temporary files
+Thumbs.db
+desktop.ini
+
+# MySQL exports and database backups
+*.sql.gz
+*.bak
+
+# Power BI temporary/backup files
+*.pbit
+*.pbix~
+data/raw/
+# Large Power BI dashboard - share separately for now
+powerbi/*.pbix
