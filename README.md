@@ -1,67 +1,47 @@
 # 🛒 E-Commerce Data Analytics | SQL, Python & Power BI
 
-An end-to-end data analytics project exploring Brazilian e-commerce sales, customer reviews, payment methods, and delivery performance using **MySQL, Python, and Power BI**.
+## 📌 Project Overview
+
+An end-to-end e-commerce data analytics project using the Brazilian E-Commerce Public Dataset by Olist. This project analyzes sales performance, customer reviews, payment methods, product categories, order statuses, and delivery performance using **MySQL, Python, and Power BI**.
 
 **Author:** KBN Naveen Kumar
+
+## 🎯 Business Objectives
+
+- Analyze monthly order and sales trends.
+- Identify top-performing product categories.
+- Understand customer payment preferences.
+- Evaluate customer review scores and satisfaction.
+- Analyze order statuses and delivery performance.
+- Identify data-quality issues and recommend business improvements.
+
+## 🛠️ Tools and Technologies
+
+- **Database:** MySQL 8.0
+- **Programming:** Python
+- **Python Libraries:** Pandas, Matplotlib
+- **Visualization:** Microsoft Power BI
+- **Version Control:** Git and GitHub
 
 ## 📊 Dashboard Preview
 
 ### 1. Sales Overview
 
-![Sales Overview Dashboard](reports/sales_overview.png)
-
-This dashboard provides an overview of order volume, item sales, customers, average order value, monthly order trends, top-selling categories, payment methods, and order status.
+![Sales Overview Dashboard](reports/customer_delivery_insights.png)
 
 ### 2. Customer & Delivery Insights
 
-![Customer and Delivery Insights Dashboard](reports/customer_delivery_insights.png)
+![Customer and Delivery Insights Dashboard](reports/sales_overview.png)
 
-This dashboard explores customer review scores, low review ratings, and non-delivered order statuses.
-
-## 🎯 Project Objectives
-
-- Analyze order volume and monthly sales trends.
-- Identify product categories with the highest item sales.
-- Understand payment method distribution.
-- Evaluate customer review scores.
-- Analyze order delivery performance.
-- Identify missing values, duplicate records, and data-quality issues.
-- Build interactive dashboards to communicate business insights.
-
-## 🛠️ Tools & Technologies
-
-- **MySQL 8.0** — SQL queries, joins, aggregations, and data validation
-- **Python** — data exploration, quality checks, KPI calculations, and analysis
-- **Pandas** — data manipulation and analysis
-- **Matplotlib** — data visualization
-- **Power BI** — interactive dashboards and KPI reporting
-- **Git & GitHub** — version control and documentation
-
-## 📂 Dataset
-
-This project uses the Olist Brazilian E-Commerce Public Dataset, containing approximately 100,000 orders from 2016–2018.
-
-The dataset includes nine CSV files covering:
-
-- Customers
-- Orders
-- Order items
-- Payments
-- Reviews
-- Products
-- Sellers
-- Geolocation
-- Product category translations
-
-The original raw CSV files are not included in this GitHub repository. Obtain the dataset from its original distribution source and follow its applicable terms.
-
-## 📁 Project Structure
+## 📂 Project Structure
 
 ```text
 EcommerceDataAnalytics/
+│
 ├── sql/
 │   ├── 01_data_quality_checks.sql
 │   └── 02_business_analysis.sql
+│
 ├── python/
 │   ├── 01_data_exploration.py
 │   ├── 02_missing_values_analysis.py
@@ -70,119 +50,103 @@ EcommerceDataAnalytics/
 │   ├── 05_top_product_categories.py
 │   ├── 06_payment_analysis.py
 │   └── 07_delivery_performance.py
+│
 ├── reports/
 │   ├── sales_overview.png
 │   ├── customer_delivery_insights.png
 │   ├── monthly_orders_trend.png
-│   ├── top_10_product_categories.png
-│   ├── payment_method_analysis.png
 │   └── delivery_performance.png
-├── data/
-│   └── Raw and processed data are kept locally
+│
 ├── powerbi/
-│   └── Power BI dashboard is kept locally
+├── data/
+│   ├── raw/
+│   └── processed/
+│
 ├── .gitignore
 └── README.md
 ```
 
+## 🗄️ Dataset
+
+This project uses the Brazilian E-Commerce Public Dataset by Olist.
+
+The dataset contains information about orders, customers, order items, payments, products, sellers, reviews, geolocation, and product category translations.
+
+**Note:** The original CSV files are not included in this repository. Obtain the dataset from its official source and place the files in the `data/raw/` folder before running the analysis.
+
 ## 🔍 Data Quality Checks
 
-Validated relationships between:
+The project includes SQL and Python checks for:
 
-- Orders and customers
-- Order items and orders
-- Order items and products
-- Order items and sellers
-- Payments and orders
+- Missing values in product and order data.
+- Duplicate geolocation records.
+- Duplicate review identifiers.
+- Missing order timestamps.
+- Invalid or unexpected payment values.
+- Negative product prices or freight charges.
+- Relationships between orders, customers, products, and sellers.
 
-The tested relationships returned zero unmatched records.
+Data-quality findings are documented without automatically deleting source records that may require further investigation.
 
-Additional checks identified:
+## 📈 Business Questions Answered
 
-- Missing product categories and product attributes
-- Missing order delivery timestamps
-- Missing review titles and comments
-- Duplicate geolocation records
-- Duplicate review IDs
-- Payment records requiring further review
+1. How does order volume change month by month?
+2. Which product categories generate the highest sales?
+3. Which payment methods are most commonly used?
+4. What proportion of orders are successfully delivered?
+5. How are customer review scores distributed?
+6. Which order statuses account for non-delivered orders?
+7. What data-quality issues should be considered before making business decisions?
 
-Data-quality exceptions were documented rather than silently removed.
+## 💡 Key Findings
 
-## 💼 Business Questions
+### Sales Performance
 
-1. How are orders distributed by status?
-2. How does order volume change month by month?
-3. Which months have the highest item sales value?
-4. Which product categories generate the highest item sales value?
-5. Which payment methods contribute the most recorded payment value?
-6. How long does delivery take?
-7. What percentage of eligible delivered orders arrive on or before the estimated delivery date?
-8. What do customer review scores reveal about customer experience?
-
-## 📈 Key Findings
-
-### Order Performance
-
-- **Total orders:** 99,441
-- **Delivered orders:** 96,478
-- **Delivered share:** Approximately 97.02%
-- **Peak order month:** November 2017, with 7,544 orders
-
-### Product Sales
-
-Top product categories by item sales value:
-
-| Product category | Item sales value |
-|---|---:|
-| Health & beauty | R$1,258,681.34 |
-| Watches & gifts | R$1,205,005.68 |
-| Bed, bath & table | R$1,036,988.68 |
-
-November 2017 was the peak month for item sales value, at approximately R$1,010,271.37.
+- The dataset contains **99,441 orders**.
+- November 2017 was the peak month, with **7,544 orders**.
+- Total item sales were approximately **R$13.59 million**, excluding freight.
+- Health and beauty was the highest-selling category by item sales, at approximately **R$1.26 million**.
 
 ### Payment Analysis
 
-- **Highest-value payment method:** Credit card
-- **Recorded credit-card payment value:** R$12,542,084.19
-- **Credit-card share of recorded payment value:** Approximately 78.34%
+- Credit cards accounted for approximately **78.34%** of recorded payment value.
+- Boleto accounted for approximately **17.92%** of recorded payment value.
+- Credit cards were the dominant payment method in the dataset.
 
-### Delivery Performance
+### Order and Delivery Performance
 
-- **Eligible delivered orders:** 96,470
-- **Average delivery time:** Approximately 12.50 calendar days
-- **On-time deliveries:** 88,644
-- **Late deliveries:** 7,826
-- **On-time delivery rate:** Approximately 91.89%
+- Approximately **97.02%** of orders had a delivered status.
+- Among eligible delivered orders, the average calendar delivery time was approximately **12.5 days**.
+- Approximately **91.89%** of eligible delivered orders arrived on or before the estimated delivery date.
 
-Delivery performance uses orders with valid purchase, delivery, and estimated-delivery timestamps. On-time delivery includes orders delivered on or before the estimated delivery date.
+### Customer Reviews
 
-*Note: Delivery metrics should be verified against the final Python output before being treated as final results.*
+- The average review score was approximately **4.1 out of 5**.
+- Review titles and comments frequently contain missing values, which should be considered when interpreting customer feedback.
 
-## 🐍 Python Analysis Outputs
+*These findings describe the available dataset and do not necessarily represent current e-commerce performance.*
 
-The Python scripts generate analysis files under `data/processed/` and visualizations under `reports/`.
+## 🐍 Python Analysis
 
-Examples include:
+Python scripts are organized to perform:
 
-- `python_data_quality_summary.csv`
-- `missing_values_by_column.csv`
-- `monthly_orders_summary.csv`
-- `product_category_sales.csv`
-- `top_10_product_categories.csv`
-- `payment_method_summary.csv`
-- `delivery_performance_summary.csv`
+- Initial data exploration.
+- Missing-value analysis.
+- Product data-quality checks.
+- Monthly order trend analysis.
+- Top product category analysis.
+- Payment method analysis.
+- Delivery performance analysis.
 
-Visualizations include monthly order trends, top product categories, payment method analysis, and delivery performance.
+Generated CSV summaries and charts are stored in the relevant `data/processed/` and `reports/` folders when produced by the scripts.
 
-## 🧹 Important Data Considerations
+## 📌 Important Data Considerations
 
-- Order purchase dates range from September 2016 to October 2018.
-- The final months contain relatively few records and should be interpreted cautiously.
-- Some products have missing categories or categories without English translations.
-- Payment records and orders are not always one-to-one.
-- Item sales value uses order-item prices and excludes freight.
-- Payment value is analyzed separately to avoid double-counting through one-to-many joins.
-- Missing values and duplicate records are investigated before deciding whether treatment is appropriate.
+- Item sales are calculated from product prices and exclude freight charges.
+- Source records may contain missing values and duplicate identifiers.
+- Delivery performance calculations use eligible delivered orders.
+- Dataset dates and results reflect the original dataset period, not current market conditions.
+- Findings should be interpreted in the context of the dataset's limitations.
 
 ## ✅ Project Status
 
@@ -190,7 +154,6 @@ Visualizations include monthly order trends, top product categories, payment met
 - [x] Validate key table relationships
 - [x] Create SQL business-analysis queries
 - [x] Develop Python data-quality and analysis scripts
-- [x] Generate analysis charts and reports
 - [x] Build interactive Power BI dashboards
 - [x] Add dashboard screenshots to GitHub
 - [x] Publish project source files on GitHub
@@ -198,19 +161,16 @@ Visualizations include monthly order trends, top product categories, payment met
 - [ ] Document final business recommendations
 - [ ] Publish the Power BI `.pbix` file or a suitable sharing link
 
-## 💡 Business Value
+## 🚀 Business Value
 
-This project demonstrates practical skills in SQL querying, relational data validation, exploratory data analysis, KPI calculation, sales trend analysis, payment analysis, delivery performance measurement, and Power BI dashboard development.
+This project demonstrates practical skills in SQL querying, data cleaning, exploratory data analysis, business intelligence, dashboard development, and communicating data-driven insights.
 
-The dashboards help stakeholders explore sales performance, product categories, customer reviews, payment methods, and order outcomes.
+It provides a foundation for using e-commerce data to monitor sales performance, understand customer behavior, and identify operational improvement opportunities.
 
 ## 👨‍💻 Author
 
 **KBN Naveen Kumar**
 
-Data Analytics | SQL | Python | Power BI | MySQL
-
 - **GitHub:** [kbn-naveen-kumar](https://github.com/kbn-naveen-kumar)
 - **Project Repository:** [E-Commerce Data Analytics](https://github.com/kbn-naveen-kumar/ecommerce-data-analytics)
 
-If you find this project useful, feel free to explore the repository and its SQL and Python scripts.
